@@ -1,8 +1,9 @@
-package io.hpd.cordova.gimbal2;
+package com.mitecube.cordova.gimbal2;
 
 /*
- * Cordova Plugin - Gimba v2
- * Denny Tsai <happydenn@happydenn.net>
+ * Cordova Plugin - Gimbal v2
+ * Extended by <info@mitecube.com>
+ * Original version from <happydenn@happydenn.net>
  */
 
 import java.util.Date;

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" 
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="io.hpd.cordova.gimbal2"
+    id="com.mitecube.cordova.gimbal2"
     version="1.0.0">
 
     <name>Gimbal2</name>
     <description>Cordova Gimbal v2 Plugin</description>
-    <author>Denny Tsai</author>
+    <author>Mitecube</author>
     <license>Apache 2.0</license>
     <keywords>cordova,gimbal,ibeacon</keywords>
-    <repo>https://github.com/happydenn/cordova-plugin-gimbal2.git</repo>
-    <issue>https://github.com/happydenn/cordova-plugin-gimbal2/issues</issue>
+    <repo>https://github.com/mitecube/cordova-plugin-gimbal2.git</repo>
+    <issue>https://github.com/mitecube/cordova-plugin-gimbal2/issues</issue>
 
     <engines>
         <engine name="cordova" version=">=3.0" />
@@ -23,7 +23,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Gimbal2">
-                <param name="android-package" value="io.hpd.cordova.gimbal2.Gimbal2" />
+                <param name="android-package" value="com.mitecube.cordova.gimbal2.Gimbal2" />
             </feature>
         </config-file>
 
@@ -48,10 +48,21 @@
             </feature>
         </config-file>
 
+        <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
+            <string>This application will send you some notification</string>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="UIBackgroundModes">
+            <array>
+                <string>remote-notification</string>
+                <string>bluetooth-central</string>
+                <string>bluetooth-peripheral</string>
+            </array>
+        </config-file>
+
         <header-file src="src/ios/Gimbal2.h" />
         <source-file src="src/ios/Gimbal2.m" />
 
         <framework src="libz.dylib" />
     </platform>
-
 </plugin>

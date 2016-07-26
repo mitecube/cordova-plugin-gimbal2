@@ -1,9 +1,8 @@
 # Cordova Gimbal v2 Plugin
 
-_This plugin is the successor of cordova-plugin-gimbal which used Gimbal v1 SDK._
+This plugin is a fork of the original Cordova Gimbal 2 plugin. (https://github.com/happydenn/cordova-plugin-gimbal2)
 
-A Cordova plugin for scanning and interacting with [Qualcomm Gimbal](http://gimbal.com) beacons.
-Updated for Gimbal SDK v2.
+It adds support for communications coming from Gimbal. 
 
 
 ## Supported Platforms
@@ -17,6 +16,7 @@ _Support for previous versions is not possible because the lack of Bluetooth LE 
 ## Supported SDK Features
 
 - Beacon Manager: listen for beacon sightings
+- Communication Manager: register to push notification services and trigger events on message received
 
 
 ## Requirements
@@ -31,7 +31,7 @@ _Support for previous versions is not possible because the lack of Bluetooth LE 
 ### Plugin Setup
 
 ```text
-cordova plugin add https://github.com/happydenn/cordova-plugin-gimbal2.git
+cordova plugin add https://github.com/mitecube/cordova-plugin-gimbal2
 ```
 
 ### Gimbal SDK Setup
@@ -40,17 +40,7 @@ cordova plugin add https://github.com/happydenn/cordova-plugin-gimbal2.git
 
 From the downloaded SDK, drag and drop __Gimbal.framework__ from the __Frameworks__ folder to the __Frameworks__ group inside the Xcode project. Be sure to copy the files when asked by Xcode.
 
-
-Add the following to your project's Info.plist to enable using Bluetooth beacons in background mode.
-
-```xml
-<key>UIBackgroundModes</key>
-<array>
-    <string>bluetooth-central</string>
-</array>
-```
-
-Finally for iOS 8 and later, you need to add a new entry to your Xcode project's Info.plist to properly request for permission to use the location service which is required by Gimbal SDK.
+Customize (if needed) in the Xcode project's Info.plist the defualt message to properly request for permission to use the location service which is required by Gimbal SDK.
 
 ```xml
 <key>NSLocationAlwaysUsageDescription</key>

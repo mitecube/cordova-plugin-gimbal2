@@ -2,6 +2,7 @@
 //  Gimbal2.h
 //  cordova-plugin-gimbal2
 //
+//  Extended by Mitecube on 7/26/16.
 //  Created by Denny Tsai on 4/21/15.
 //
 //
@@ -10,9 +11,10 @@
 #import <Cordova/CDV.h>
 #import <Gimbal/Gimbal.h>
 
-@interface Gimbal2 : CDVPlugin <GMBLBeaconManagerDelegate>
+@interface Gimbal2 : CDVPlugin <GMBLBeaconManagerDelegate, GMBLCommunicationManagerDelegate>
 
 @property (nonatomic, strong) GMBLBeaconManager *beaconManager;
+@property (nonatomic, strong) GMBLCommunicationManager *communicationManager;
 
 - (void)initialize:(CDVInvokedUrlCommand *)command;
 
