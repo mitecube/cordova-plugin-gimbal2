@@ -36,12 +36,12 @@ Gimbal2.prototype.errorCallback = function(data) {
 
 Gimbal2.prototype.startBeaconManager = function() {
     if (!this.hasInitialized) return;
-    exec(null, null, "Gimbal2", "startBeaconManager", []);
+    //exec(null, null, "Gimbal2", "startBeaconManager", []);
 };
 
 Gimbal2.prototype.stopBeaconManager = function() {
     if (!this.hasInitialized) return;
-    exec(null, null, "Gimbal2", "stopBeaconManager", []);
+    //exec(null, null, "Gimbal2", "stopBeaconManager", []);
 };
 
 Gimbal2.prototype.setDeviceToken = function(deviceToken) {
